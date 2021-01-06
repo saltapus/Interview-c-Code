@@ -1,2 +1,2 @@
 # Interview c Code
- basic practise
+ basic practise for common interview questions
