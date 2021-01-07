@@ -13,7 +13,7 @@ FibonacciSeries.o : FibonacciSeries.c FibonacciSeries.h
 	$(CC) -c FibonacciSeries.c $(CFLAGS)
 
 clean:
-	rm -rf $(OBJ) $(EXEC)
+	Del $(OBJ) $(EXEC)
 
 runVal:
-	valgrind ./$(EXEC)cho~
+	valgrind ./$(EXEC)
