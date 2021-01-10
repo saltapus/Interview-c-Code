@@ -1,7 +1,6 @@
-#include <stdio.h>
+#include "FibonacciSeries.h"
 /*Without recursion*/
 
-void fibRec(int n);
 int main()
 {
     int n1, n2, n3, i, number;

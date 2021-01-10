@@ -1,16 +1,16 @@
 #Author: Anthony Cameron
-#Date Modified: 06/01/202
+#Date Modified: 10/01/2021
 
 CC = gcc
 CFLAGS = -Wall -pedantic -ansi -g
-OBJ = FibonacciSeries.o
-EXEC = FibonacciSeries
+OBJ = Factorial.o
+EXEC = Factorial 
 
 $(EXEC) : $(OBJ)
 	$(CC) $(OBJ) -o $(EXEC)
 
-FibonacciSeries.o : FibonacciSeries.c FibonacciSeries.h
-	$(CC) -c FibonacciSeries.c $(CFLAGS)
+FibonacciSeries.o : Factorial.c Factorial.h
+	$(CC) -c Factorial.c $(CFLAGS)
 
 clean:
 	Del $(OBJ) $(EXEC)
