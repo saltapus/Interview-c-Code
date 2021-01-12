@@ -21,20 +21,23 @@ int main()
 
     printf("%s\n", x);
     printf("PreOrder Traversal\n");
-    printf("%s\n", x);
+    printf("%s\n[", x);
     preOrder();
+    printf("]\n", x);
 
     printf("%s\n", x);
     printf("InOrder Traversal\n");
-    printf("%s\n", x);
+    printf("%s\n[", x);
     inOrder();
+    printf("]\n", x);
 
     printf("%s\n", x);
     printf("PostOrder Traversal\n");
-    printf("%s\n", x);
+    printf("%s\n[", x);
     postOrder();
+    printf("]\n", x);
 
-    printf("total count is: %d\n left count is: %d\n right count is: %d\n", count, lCount, rCount);
+    printf("\nTotal count is: %d\n left count is: %d\n right count is: %d\n", count, lCount, rCount);
     return 0;
 }
 
@@ -65,13 +68,13 @@ struct node* insertRec(struct node* node, int value)
     }
     else if (value < node->value)
     {
-        lCount++;
         node->left = insertRec(node->left, value);
+        lCount++;
     }
     else if (value > node->value)
     {
-        rCount++;
         node->right = insertRec(node->right, value);
+        rCount++;
     }
     return node;
 }
@@ -85,7 +88,7 @@ void recPreOrder(struct node *node)
 {
     if(node != NULL)
     {
-        printf("%d \n", node->value);
+        printf("%d, ", node->value);
         recPreOrder(node->left);
         recPreOrder(node->right);
     }
@@ -96,12 +99,12 @@ void inOrder()
     recInOrder(root);
 }
 
-void recInOrder(struct node* root) 
+void recInOrder(struct node* node) 
 { 
-    if (root != NULL) { 
-        recInOrder(root->left); 
-        printf("%d \n", root->value); 
-        recInOrder(root->right); 
+    if (node != NULL) { 
+        recInOrder(node->left); 
+        printf("%d, ", node->value);
+        recInOrder(node->right); 
     } 
 } 
 
@@ -116,6 +119,6 @@ void recPostOrder(struct node *node)
     {
         recPostOrder(node->left);
         recPostOrder(node->right);
-        printf("%d \n", node->value);
+        printf("%d, ", node->value);
     }
 }
